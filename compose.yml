@@ -6,6 +6,7 @@ services:
     build: .
     environment:
       - OUTPUT_DIR=/output
+      - ROOTPATH=${ROOTPATH}
     ports:
       - 5042:8000
     volumes:

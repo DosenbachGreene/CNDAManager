@@ -15,11 +15,12 @@
     "web-vitals": "^2.1.4",
     "xtypejs": "^0.7.1"
   },
+  "homepage": "https://dosenbachlab.wustl.edu/cnda/",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "BUILD_PATH=../api/dist react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "craco start",
+    "build": "BUILD_PATH=../api/dist craco build",
+    "test": "craco test",
+    "eject": "echo \"DO NOT RUN ME react-scripts eject\""
   },
   "eslintConfig": {
     "extends": [
@@ -40,6 +41,7 @@
     ]
   },
   "devDependencies": {
+    "@craco/craco": "^7.1.0",
     "concurrently": "^8.0.1"
   }
 }

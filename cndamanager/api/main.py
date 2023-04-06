@@ -21,8 +21,8 @@ app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 # add static files
-STATIC_FILES = str(Path(__file__).absolute().parent / "dist" / "static")
-app.mount("/static", StaticFiles(directory=STATIC_FILES), name="static")
+STATIC_FILES = str(Path(__file__).absolute().parent / "dist" / "static_assets")
+app.mount("/static_assets", StaticFiles(directory=STATIC_FILES), name="static")
 
 # Instantiate logger
 logger = logging.getLogger(__name__)
