@@ -8,7 +8,7 @@ import Downloads from './pages/Downloads';
 
 function App() {
   return (
-    <div className={Classes.DARK} style={{backgroundColor: Colors.DARK_GRAY3}}>
+    <div className={Classes.DARK} style={{minHeight: "100vh", backgroundColor: Colors.DARK_GRAY3}}>
       <BrowserRouter basename='/cnda'> 
         <Routes>
           <Route exact path="/" element={<Projects />} />

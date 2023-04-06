@@ -95,7 +95,7 @@ class Downloads extends React.Component{
         const keyValuePairs = Object.entries(this.state.download_status);
 
         const renderedItems = keyValuePairs.map(([key, value]) => (
-          <Card key={key} elevation={Elevation.TWO}>
+          <Card interactive={true} key={key} elevation={Elevation.TWO}>
             <h3>Subject: {key}</h3>
             <p>Progress: {value}</p>
           </Card>
