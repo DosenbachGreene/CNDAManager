@@ -15,7 +15,6 @@
     "web-vitals": "^2.1.4",
     "xtypejs": "^0.7.1"
   },
-  "homepage": "/cnda",
   "scripts": {
     "start": "react-scripts start",
     "build": "BUILD_PATH=../api/dist react-scripts build",

@@ -53,7 +53,7 @@ class Downloads extends React.Component{
 
     getDownloadStatus() {
         console.log(this.state.download_job_id)
-        fetch(`/api/download/status/${this.state.download_job_id}`)
+        fetch(`api/download/status/${this.state.download_job_id}`)
         .then(response => response.json())
         .then(response => this.setState({download_status: response}, () => {
             console.log(this.state.download_status);
@@ -61,7 +61,7 @@ class Downloads extends React.Component{
     }
 
     queueDownloads() {
-        fetch('/api/download', {
+        fetch('api/download', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

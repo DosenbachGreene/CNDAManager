@@ -41,7 +41,7 @@ class Subjects extends React.Component {
     }
 
     retrieveSubjects() {
-        fetch(`/api/projects/${this.state.project_id}`)
+        fetch(`api/projects/${this.state.project_id}`)
             .then(response => response.json())
             .then(response => this.setState({ subject_ids: response }))
             .finally(() => this.setState({ is_loading: false }));
