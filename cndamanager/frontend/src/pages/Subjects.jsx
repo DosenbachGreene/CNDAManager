@@ -67,7 +67,7 @@ class Subjects extends React.Component {
         const checkboxRow = [];
 
         for (let i = 0; i < this.state.subject_ids.length; i++) {
-            checkboxRow.push(<Checkbox onChange={e => this.handleCheckbox(e)} key={i} label={this.state.subject_ids[i]} name={this.state.subject_ids[i]} />);
+            checkboxRow.push(<Checkbox large={true} onChange={e => this.handleCheckbox(e)} key={i} label={this.state.subject_ids[i]} name={this.state.subject_ids[i]} />);
         }
 
         return checkboxRow;

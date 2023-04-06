@@ -9,9 +9,9 @@ import Downloads from './pages/Downloads';
 function App() {
   return (
     <div className={Classes.DARK} style={{minHeight: "100vh", backgroundColor: Colors.DARK_GRAY3}}>
-      <BrowserRouter basename='/cnda'> 
+      <BrowserRouter basename={process.env.PUBLIC_URL}> 
         <Routes>
-          <Route exact path="/" element={<Projects />} />
+          <Route path="/" element={<Projects />} />
           <Route path="/subjects" element={<Subjects />} />
           <Route path="/download" element={<Downloads />} />
         </Routes>

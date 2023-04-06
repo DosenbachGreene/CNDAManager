@@ -17,7 +17,7 @@
   },
   "homepage": "https://dosenbachlab.wustl.edu/cnda",
   "scripts": {
-    "start": "craco start",
+    "start": "PUBLIC_URL=/ craco start",
     "build": "BUILD_PATH=../api/dist craco build",
     "test": "craco test",
     "eject": "echo \"DO NOT RUN ME react-scripts eject\""

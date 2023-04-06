@@ -11,6 +11,8 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import List
 from uuid import UUID
+from memori.logging import setup_logging
+setup_logging()
 
 # Instantiate FastAPI app
 app = FastAPI()
@@ -64,7 +66,6 @@ def get_subjects(project_id: str):
     with xnat.connect("https://cnda.wustl.edu", user=None, password=None, extension_types=False) as session:
         subject_list = session.projects[project_id].subjects
         subject_labels = [subject_list[subject].label for subject in range(len(subject_list))]
-
     return subject_labels
 
 

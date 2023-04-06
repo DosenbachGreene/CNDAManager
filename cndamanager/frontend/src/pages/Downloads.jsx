@@ -2,7 +2,7 @@ import '../App.css';
 import React from 'react';
 import { useLocation, useNavigate} from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
-import { Card, Elevation } from '@blueprintjs/core';
+import { Card, Elevation, Intent, ProgressBar } from '@blueprintjs/core';
 
 
 function withHook(Component){
@@ -98,6 +98,18 @@ class Downloads extends React.Component{
           <Card interactive={true} key={key} elevation={Elevation.TWO}>
             <h3>Subject: {key}</h3>
             <p>Progress: {value}</p>
+            if (value === "queued") {
+                <ProgressBar intent={Intent.NONE} animate={true} stripes={true} />
+            }
+            else if (value === "in_progress") {
+                 <ProgressBar intent={Intent.PRIMARY} animate={true} stripes={true} />
+            }
+            else if (value === "complete") {
+                <ProgressBar intent={Intent.SUCCESS} animate={false} stripes={false} />
+            }
+            else {
+                <ProgressBar />
+            }
           </Card>
         ));
 

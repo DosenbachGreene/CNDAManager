@@ -24,7 +24,7 @@ class Projects extends React.Component {
         // this should be used to get all projects from cnda as a list
         fetch('api/projects')
         .then(response => response.json())
-        .then(response => this.setState({projects: response}))
+        .then(response => this.setState({projects: response}));
     }
 
     componentWillUnmount() {
