@@ -118,7 +118,12 @@ def downloader(download_job_id: UUID, project_id: str, subject_id: str):
 
     try:
         with xnat.connect("https://cnda.wustl.edu", user=None, password=None, extension_types=False) as session:
-            #    download data
+
+            # Check to ensure experiment data exists
+            if len(session.projects[project_id].subjects[subject_id].experiments) == 0:
+                download_queue[download_job_id][subject_id] = "no_data_to_download"
+                return (f"failure: could not download data for {project_id} and {subject_id} in background \n Error: no experiments found for {subject_id} in {project_id}")
+
             scan = session.projects[project_id].subjects[subject_id].experiments[0]
             full_output_path = output_dir / project_id / f"{subject_id}.zip"
             parent_output_path = full_output_path.parent
