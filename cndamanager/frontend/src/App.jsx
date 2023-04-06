@@ -9,7 +9,8 @@ import Downloads from './pages/Downloads';
 function App() {
   return (
     <div className={Classes.DARK} style={{backgroundColor: Colors.DARK_GRAY3}}>
-      <BrowserRouter>
+      {/* basename defines subpath this app is hosted on */}
+      <BrowserRouter basename='/cnda'> 
         <Routes>
           <Route exact path="/" element={<Projects />} />
           <Route path="/subjects" element={<Subjects />} />
