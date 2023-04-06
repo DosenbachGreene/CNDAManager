@@ -97,6 +97,9 @@ class Downloads extends React.Component{
         else if (value === "complete") {
             return <ProgressBar intent={Intent.SUCCESS} animate={false} stripes={false} />
         }
+        else if (value === "no_data_to_download") {
+            return <ProgressBar intent={Intent.WARNING} animate={false} stripes={false} />
+        }
         else if (value === "failed") {
             return <ProgressBar intent={Intent.DANGER} animate={false} stripes={false} />
         }
