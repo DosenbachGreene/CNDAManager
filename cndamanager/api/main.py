@@ -11,8 +11,6 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import List
 from uuid import UUID
-from memori.logging import setup_logging
-setup_logging()
 
 # Instantiate FastAPI app
 app = FastAPI()
