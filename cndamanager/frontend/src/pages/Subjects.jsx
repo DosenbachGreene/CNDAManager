@@ -87,7 +87,7 @@ class Subjects extends React.Component {
                         height: "100vh",
                     }}
                 >
-                    <NonIdealState icon=<Spinner /> title="Loading Subjects..." />
+                    <NonIdealState icon=<Spinner intent={Intent.PRIMARY} /> title="Loading Subjects..." />
                 </div>
 
             )

@@ -34,7 +34,7 @@ logger.setLevel(logging.INFO)
 download_queue = dict()
 
 # Set output directory for downloaded data
-output_dir = Path(os.environ.get("OUTPUT_DIR", "/Users/vahdetasuljic/data"))
+output_dir = Path(os.environ.get("OUTPUT_DIR", ".cache"))
 
 # get main page
 INDEX_HTML = str(Path(__file__).absolute().parent / "dist" / "index.html")

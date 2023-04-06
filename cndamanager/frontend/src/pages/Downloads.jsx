@@ -90,26 +90,30 @@ class Downloads extends React.Component{
         });
     }
 
+    drawProgressBar(value) {
+        if (value === "in_progress") {
+             return <ProgressBar intent={Intent.PRIMARY} animate={true} stripes={true} />
+        }
+        else if (value === "complete") {
+            return <ProgressBar intent={Intent.SUCCESS} animate={false} stripes={false} />
+        }
+        else if (value === "failed") {
+            return <ProgressBar intent={Intent.DANGER} animate={false} stripes={false} />
+        }
+        else {
+            return <ProgressBar intent={Intent.NONE} animate={true} stripes={true}/>
+        }
+    }
+
     renderListItems() {
 
         const keyValuePairs = Object.entries(this.state.download_status);
-
+    
         const renderedItems = keyValuePairs.map(([key, value]) => (
           <Card interactive={true} key={key} elevation={Elevation.TWO}>
             <h3>Subject: {key}</h3>
             <p>Progress: {value}</p>
-            if (value === "queued") {
-                <ProgressBar intent={Intent.NONE} animate={true} stripes={true} />
-            }
-            else if (value === "in_progress") {
-                 <ProgressBar intent={Intent.PRIMARY} animate={true} stripes={true} />
-            }
-            else if (value === "complete") {
-                <ProgressBar intent={Intent.SUCCESS} animate={false} stripes={false} />
-            }
-            else {
-                <ProgressBar />
-            }
+            {this.drawProgressBar(value)}
           </Card>
         ));
 
