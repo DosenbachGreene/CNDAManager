@@ -11,8 +11,10 @@ COPY ./cndamanager /code/cndamanager
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 RUN cd cndamanager/frontend && npm install && npm run build
 
-# expose port 8000
-EXPOSE 8000
+# COPY over the .netrc file in this directory
+COPY .netrc /root/.netrc
 
-# set the entrypoint
-ENTRYPOINT ["uvicorn", "cndamanager.api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# clear the entrypoint
+ENTRYPOINT []
+# set CMD
+CMD ["uvicorn", "cndamanager.api.main:app", "--host", "0.0.0.0", "--port", "8000"]

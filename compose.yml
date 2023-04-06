@@ -1,11 +1,13 @@
 version: '3.8'
 services:
   backend:
+    restart: always
     image: ghcr.io/dosenbachgreene/cndamanager:latest
     build: .
     environment:
       - OUTPUT_DIR=/output
     ports:
-      - "8000:8000"
+      - 5042:8000
     volumes:
-      - .:/output
+      - ${CNDA_DATA_PATH}:/output
+    command: uvicorn cndamanager.api.main:app --host 0.0.0.0 --port 8000 ${CMD_ADD_ARGS}
