@@ -1,7 +1,7 @@
 import '../App.css';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button, Radio, RadioGroup, Card } from "@blueprintjs/core";
+import { Button, Intent, Radio, RadioGroup, Card, Elevation } from "@blueprintjs/core";
 
 function withHook(Component){
     return function WrappedComponent(props) {
@@ -69,11 +69,11 @@ class Projects extends React.Component {
                     height: "100vh",
                 }}
             >
-                <Card>
+                <Card elevation={Elevation.ONE}>
                     <RadioGroup label="Choose which project to download from:" onChange={this.handleProjectChange} selectedValue={this.state.selected_project}>
                         {buttonRow}
                     </RadioGroup>
-                    <Button onClick={() => this.handleContinue()} text="Continue" disabled={!isProjectSelected}/>
+                    <Button intent={Intent.PRIMARY} onClick={() => this.handleContinue()} text="Continue" disabled={!isProjectSelected}/>
                 </Card>
             </div>
         );

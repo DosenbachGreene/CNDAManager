@@ -2,7 +2,7 @@ import '../App.css';
 import React from 'react';
 import { useLocation, useNavigate} from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
-import { Button, Card, Elevation } from '@blueprintjs/core';
+import { Card, Elevation } from '@blueprintjs/core';
 
 
 function withHook(Component){

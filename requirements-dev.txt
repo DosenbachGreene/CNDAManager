@@ -1,0 +1,4 @@
+black
+coverage[toml]
+pytest
+pytest-pycodestyle
