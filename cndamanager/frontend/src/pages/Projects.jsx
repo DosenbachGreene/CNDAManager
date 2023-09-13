@@ -1,7 +1,7 @@
 import '../App.css';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button, Intent, Radio, RadioGroup, Card, Elevation } from "@blueprintjs/core";
+import { Button, Intent, Radio, RadioGroup, Card, Elevation, NonIdealState, Spinner } from "@blueprintjs/core";
 
 function withHook(Component){
     return function WrappedComponent(props) {
@@ -58,6 +58,22 @@ class Projects extends React.Component {
 
         const isProjectSelected = this.state.selected_project !== "None";
         const buttonRow = this.getButtons();
+
+        if (this.state.projects === "None") {
+            return (
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        height: "100vh",
+                    }}
+                >
+                    <NonIdealState icon=<Spinner intent={Intent.PRIMARY} /> title="Loading Projects..." />
+                </div>
+
+            )
+        }
 
         return(
             // each button will load the project's subjects

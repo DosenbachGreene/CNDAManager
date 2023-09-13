@@ -11,9 +11,6 @@ COPY ./cndamanager /code/cndamanager
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 RUN cd cndamanager/frontend && npm install && npm run build
 
-# COPY over the .netrc file in this directory
-COPY .netrc /root/.netrc
-
 # clear the entrypoint
 ENTRYPOINT []
 # set CMD

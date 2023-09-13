@@ -1,6 +1,9 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 module.exports = {
+  devServer: {
+    port: 7000,
+  },
   webpack: {
     configure: (webpackConfig, { env, paths }) => {
       if (webpackConfig["mode"] !== "production") return webpackConfig

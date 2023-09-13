@@ -3,3 +3,4 @@ fastapi
 fastapi-limiter
 uvicorn
 slowapi
+python-multipart
