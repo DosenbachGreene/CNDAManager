@@ -60,18 +60,11 @@ class Projects extends React.Component {
         const buttonRow = this.getButtons();
 
         if (this.state.projects === "None") {
+            let icon = <Spinner size={Spinner.SIZE_LARGE} intent={Intent.PRIMARY} />
             return (
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        height: "100vh",
-                    }}
-                >
-                    <NonIdealState icon=<Spinner intent={Intent.PRIMARY} /> title="Loading Projects..." />
+                <div style={{display: "flex", justifyContent: "center", alignItems: "center", height: "100vh"}}>
+                    <NonIdealState icon={icon} title="Loading Projects..." />
                 </div>
-
             )
         }
 
