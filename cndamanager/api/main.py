@@ -114,7 +114,7 @@ def get_projects(request: Request):
             project_list = session.projects
             # only get projects that the user has access to
             # TODO: This is kind of slow... probably a better way to determine what projects the user has access to
-            projects = [project for project in project_list if len(project_list[project].subjects) > 0]
+            projects = [project for project in project_list.values() if username in project.users]
         return projects
 
 
