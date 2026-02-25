@@ -5,7 +5,7 @@ services:
     image: ghcr.io/dosenbachgreene/cndamanager:latest
     build: .
     environment:
-      - OUTPUT_DIR=/output
+      - OUTPUT_DIR=/data/nil-bluearc/GMT3/Datasets/
     ports:
       - 5042:8000
     volumes:
